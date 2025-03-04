@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #0a0a0a;
+  --secondary-color: #E56C3E;
+  --white-color: #fff;
+  --black-color: #000;
+  --hover-color: color-mix(in srgb, var(--secondary-color) 80%, black);
+  --box-color: #333;
+  --nav-color: rgb(128 128 128 / 46%);
+}
+
 @media screen and (max-width: 400px) {
   #features {
     padding: 20px;
