@@ -2,8 +2,8 @@
 @import '../../App.css';
 
 .header {
-    display: flex;
-    align-items: center;
+    /*display: flex;*/
+    /*align-items: center;*/
     position: fixed;
     top: 25px;
     left: 50%;
@@ -53,9 +53,9 @@
 /* Update nav-content to align items properly */
 .nav-content {
     display: flex;
-    justify-content: space-between; /* Changed from center */
     align-items: center;
     gap: 1rem;
+    flex-direction: row-reverse; /* Changed from column */
 }
 
 .nav-link::after {
@@ -202,6 +202,7 @@
     .mobile-link-4 { transition-delay: 0.25s; }
     .mobile-link-5 { transition-delay: 0.3s; }
     .mobile-link-6 { transition-delay: 0.35s; }
+    .mobile-link-7 { transition-delay: 0.4s; }
 
     /* Animation when menu is open */
     .mobile-menu.open-menu .mobile-link {
