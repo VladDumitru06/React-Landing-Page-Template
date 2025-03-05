@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
-import './Navigation.css';
+import './navigation.css';
 import Logo from '../../assets/img/Logo.png'; // Updated import path
 
 const Navigation = () => {
@@ -47,10 +47,9 @@ const Navigation = () => {
 
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+            {/*<img src={Logo} alt="Logo" className="nav-logo" />*/}
             <nav className="nav">
                 <div className="nav-content">
-                    <img src={Logo} alt="Logo" className="nav-logo" />
-
                     <div className="desktop-menu">
                         {navigation.map((item) => (
                             <a
