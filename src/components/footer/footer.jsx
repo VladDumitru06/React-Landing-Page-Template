@@ -21,6 +21,11 @@ const Footer = () => {
                         <div className="footer-logo-container">
                             <img src={LogoRCI} alt="Logo" className="footer-logo-rci" />
                         </div>
+                        <div className="social-icons">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <Linkedin size={20} />
+                            </a>
+                        </div>
                     </div>
                     <div className="footer-section">
                         <h3 className="footer-title">
