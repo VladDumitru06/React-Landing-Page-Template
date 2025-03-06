@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Github, Twitter, Linkedin, Code, Users } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Code, Users } from 'lucide-react';
 import './footer.css';
 import LogoRCI from '../../assets/img/rci_white_logo.svg';
 import Logo from '../../assets/img/Logo alb-alb.png';
