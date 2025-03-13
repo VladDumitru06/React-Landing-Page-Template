@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
-import './navigation.css';
-import Logo from '../../assets/img/Logo.png'; // Updated import path
-
+import './Navigation.css';
+import Logo from '../../assets/img/Logo.png';
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -47,6 +46,7 @@ const Navigation = () => {
 
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+            <img alt={'company logo'} src={Logo} width={'100px'} />
             {/*<img src={Logo} alt="Logo" className="nav-logo" />*/}
             <nav className="nav">
                 <div className="nav-content">

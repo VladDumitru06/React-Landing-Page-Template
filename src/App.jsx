@@ -7,11 +7,11 @@ import { Gallery } from "./components/gallery";
 import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import Contact from "./components/contact/contact";
-import Navigation from './components/header/navigation';
 import Footer from './components/footer/footer';
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+import Navigation from "./components/Header/Navigation";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -35,7 +35,7 @@ const App = () => {
       <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
-        <Footer />
+      <Footer />
     </div>
   );
 };

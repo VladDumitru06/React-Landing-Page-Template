@@ -10,6 +10,8 @@
     transform: translateX(-50%);
     z-index: 1000;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .nav {
@@ -18,7 +20,8 @@
     border-radius: 50px;
     padding: 15px 40px;
     transition: all 0.3s ease;
-    position: relative; /* Needed for absolute positioning of mobile menu */
+    position: relative;
+    /* Needed for absolute positioning of mobile menu */
 }
 
 .nav-link {
@@ -28,7 +31,8 @@
     transition: color 0.3s ease;
     padding: 5px 10px;
     align-content: center;
-    position: relative; /* Added for pseudo-element positioning */
+    position: relative;
+    /* Added for pseudo-element positioning */
 }
 
 .nav-link:hover {
@@ -45,7 +49,8 @@
 }
 
 .nav-logo {
-    height: 40px; /* Adjust based on your needs */
+    height: 40px;
+    /* Adjust based on your needs */
     width: auto;
     margin-right: 20px;
 }
@@ -55,7 +60,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex-direction: row-reverse; /* Changed from column */
+    flex-direction: row-reverse;
+    /* Changed from column */
 }
 
 .nav-link::after {
@@ -72,7 +78,8 @@
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: calc(100% - 20px); /* Subtracting padding */
+    width: calc(100% - 20px);
+    /* Subtracting padding */
 }
 
 .topbar {
@@ -182,7 +189,8 @@
     }
 
     .mobile-menu.open-menu {
-        max-height: 400px; /* Adjust based on your content */
+        max-height: 400px;
+        /* Adjust based on your content */
         opacity: 1;
         padding: 10px 20px;
     }
@@ -195,14 +203,37 @@
     }
 
     /* Individual link animations with hardcoded delays */
-    .mobile-link-0 { transition-delay: 0.05s; }
-    .mobile-link-1 { transition-delay: 0.1s; }
-    .mobile-link-2 { transition-delay: 0.15s; }
-    .mobile-link-3 { transition-delay: 0.2s; }
-    .mobile-link-4 { transition-delay: 0.25s; }
-    .mobile-link-5 { transition-delay: 0.3s; }
-    .mobile-link-6 { transition-delay: 0.35s; }
-    .mobile-link-7 { transition-delay: 0.4s; }
+    .mobile-link-0 {
+        transition-delay: 0.05s;
+    }
+
+    .mobile-link-1 {
+        transition-delay: 0.1s;
+    }
+
+    .mobile-link-2 {
+        transition-delay: 0.15s;
+    }
+
+    .mobile-link-3 {
+        transition-delay: 0.2s;
+    }
+
+    .mobile-link-4 {
+        transition-delay: 0.25s;
+    }
+
+    .mobile-link-5 {
+        transition-delay: 0.3s;
+    }
+
+    .mobile-link-6 {
+        transition-delay: 0.35s;
+    }
+
+    .mobile-link-7 {
+        transition-delay: 0.4s;
+    }
 
     /* Animation when menu is open */
     .mobile-menu.open-menu .mobile-link {
@@ -211,7 +242,8 @@
     }
 
     .nav-logo {
-        height: 30px; /* Slightly smaller for mobile */
+        height: 30px;
+        /* Slightly smaller for mobile */
     }
 
     .contact-info-header {
@@ -224,6 +256,7 @@
     }
 
     .header.scrolled {
-        top: 25px; /* Adjust for mobile scrolled state */
+        top: 25px;
+        /* Adjust for mobile scrolled state */
     }
 }

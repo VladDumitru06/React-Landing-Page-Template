@@ -468,8 +468,7 @@ header .intro-text {
 
 #testimonials i {
   color: #e6e6e6;
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: clamp(1rem, 0.8317rem + 0.8974vw, 1.4375rem);
 }
 
 .testimonial {
