@@ -61,7 +61,7 @@ export const Testimonials = () => {
     { name: 'PPC Renewables', img: PPCRenewables },
     { name: 'Premier Energy', img: PremierEnergy },
     { name: 'Registrul National de Transplant', img: RegistrulNational },
-    { name: 'Stema Primarie', img: StemaPrimarie },
+    { name: 'Primaria Brasov', img: StemaPrimarie },
     { name: 'Transelectrica', img: Transelectrica }
   ];
 
