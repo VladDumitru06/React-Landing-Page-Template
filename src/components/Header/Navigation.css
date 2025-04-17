@@ -190,7 +190,7 @@
 
     .mobile-menu.open-menu {
         max-height: 400px;
-        /* Adjust based on your content */
+        width:150px;
         opacity: 1;
         padding: 10px 20px;
     }

@@ -10,7 +10,7 @@ const Navigation = () => {
     // Use useMemo to prevent recreation of the navigation array on each render
     const navigation = useMemo(() => [
         { name: 'ACASA', href: '#header', section: 'header' },
-        { name: 'COMPETENTE', href: '#features', section: 'features' },
+        { name: 'EXPERTISE', href: '#features', section: 'features' },
         { name: 'DESPRE\u00A0NOI', href: '#about', section: 'about' },
         { name: 'SERVICII', href: '#services', section: 'services' },
         { name: 'GALERIE', href: '#portfolio', section: 'portfolio' },

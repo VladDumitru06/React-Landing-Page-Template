@@ -249,7 +249,7 @@ a:focus,
 }
 
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.);
 }
 
 .intro h1 {
@@ -278,7 +278,7 @@ a:focus,
 
 header .intro-text {
   padding-top: 350px;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
