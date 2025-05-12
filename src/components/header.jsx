@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AnimatedBackground from './animatedBackground'; // Ensure this path is correct
 
 export const Header = (props) => {
   const [words, setWords] = useState([]);
@@ -8,30 +9,28 @@ export const Header = (props) => {
   useEffect(() => {
     if (!props.data) return;
     
-    // Split the text into words
     const wordArray = fullText.split(" ");
     setWords(wordArray);
-    setCurrentWordIndex(0);
+    setCurrentWordIndex(0); 
     
-    // Reset the animation
+    let revealedCount = 0;
     const wordInterval = setInterval(() => {
-      setCurrentWordIndex(prevIndex => {
-        if (prevIndex < wordArray.length - 1) {
-          return prevIndex + 1;
-        } else {
-          clearInterval(wordInterval);
-          return prevIndex;
-        }
-      });
-    }, 300); // Adjust speed of word appearance here
+      revealedCount++;
+      if (revealedCount <= wordArray.length) {
+        setCurrentWordIndex(revealedCount);
+      } else {
+        clearInterval(wordInterval);
+      }
+    }, 300); 
     
     return () => clearInterval(wordInterval);
-  }, [props.data, fullText]);
+  }, [props.data, fullText]); 
   
   return (
     <>
       <style>
         {`
+          /* Existing word animation styles */
           .word-container {
             display: inline-block;
             margin-right: 12px;
@@ -46,7 +45,7 @@ export const Header = (props) => {
             position: absolute;
             white-space: nowrap;
             left: 0;
-            transform: translateX(100vw); /* Start from right edge of screen */
+            transform: translateX(100vw); 
             opacity: 0;
             animation: slideInFromScreen 0.7s forwards;
           }
@@ -66,37 +65,54 @@ export const Header = (props) => {
             overflow: visible;
           }
           
-          /* Create placeholder space for words */
           .word-space {
             visibility: hidden;
             display: inline-block;
           }
+
+          /* Styles for .intro and .overlay layering */
+          .intro {
+            position: relative; /* For positioning AnimatedBackground */
+            /* The background image for .intro should be set in your global CSS file */
+            /* e.g., background: url(../img/intro-bg.jpg) center center no-repeat; */
+            display: table; 
+            width: 100%;    
+            padding: 0;     
+          }
+
+          .intro .overlay {
+            position: relative; 
+            z-index: 2; /* Above AnimatedBackground's container, potentially same level as its icons */
+            background: rgba(0, 0, 0, 0.0); /* Ensure it's transparent or semi-transparent */
+          }
+          
+          .intro .intro-text {
+             position: relative; 
+             z-index: 3; /* On top of the overlay and animation */
+             padding-top: 350px; /* As per your original CSS */
+             padding-bottom: 50px; /* As per your original CSS */
+             text-align: center; /* As per your original CSS */
+          }
         `}
       </style>
       <header id="header">
-        <div className="intro">
-          <div className="overlay">
+        <div className="intro"> {/* This div gets its background from global CSS */}
+          <AnimatedBackground /> {/* The animated overlay component */}
+          <div className="overlay"> {/* Your existing overlay */}
             <div className="container">
               <div className="row">
                 <div className="col-md-4 col-md-offset-0 intro-text">
                   <p style={{color:"#ed502e", height:'100px', fontWeight:'600', fontSize:'3rem', overflow: 'visible', position: 'relative', top:'-150px'}}>
                     <span className="words-wrapper">
-                      {words.map((word, index) => (
+                      {words.slice(0, currentWordIndex).map((word, index) => (
                         <span key={index} className="word-container">
-                          {/* Hidden text to maintain spacing */}
                           <span className="word-space">{word}</span>
-                          
-                          {/* Animated word */}
-                          {index <= currentWordIndex && (
-                            <span 
-                              className="sliding-word" 
-                              style={{
-                                animationDelay: `${index * 0.1}s`
-                              }}
-                            >
-                              {word}
-                            </span>
-                          )}
+                          <span 
+                            className="sliding-word" 
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                          >
+                            {word}
+                          </span>
                         </span>
                       ))}
                     </span>
@@ -110,3 +126,5 @@ export const Header = (props) => {
     </>
   );
 };
+
+// export default Header; // If Header is in its own file

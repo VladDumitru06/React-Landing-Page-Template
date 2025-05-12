@@ -75,7 +75,17 @@
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
-
+.nav-link:focus {
+    color: var(--white-color) !important; /* Default color */
+    text-decoration: none !important; /* Remove underline */
+    outline: none; /* Remove outline */
+  }
+  
+  /* When active */
+  .nav-link.active:focus {
+    color: var(--secondary-color) !important; /* Your active color */
+    text-decoration: none !important;
+  }
 .nav-link:hover::after,
 .nav-link.active::after {
     width: calc(100% - 20px);
