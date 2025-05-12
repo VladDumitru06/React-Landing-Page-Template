@@ -32,7 +32,7 @@ import Transelectrica from '../assets/img/clientsLogos/Transelectrica-removebg-p
 // Import the CSS file
 import './ClientCarousel.css';
 
-export const Testimonials = () => {
+export const Testimonials = (props) => {
   // Array of all client logos with their names
   const clientLogos = [
     { name: 'AEM Timisoara', img: AEM_Timisoara },
@@ -132,7 +132,7 @@ export const Testimonials = () => {
     <div id="testimonials">
       <div className="container">
         <div className="section-title text-center">
-          <h2>Our Trusted Clients</h2>
+        <h2>{props.data ? props.data.title : "Our Trusted Clientss"}</h2>
         </div>
 
         <div className="client-carousel-container">

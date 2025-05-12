@@ -16,7 +16,7 @@ const Footer = () => {
                             <img src={Logo} alt="Logo" className="footer-logo" />
                         </div>
                         <p className="company-description">
-                            CIMA DATA ANALYTICS S.A. is a company of RCI Holding. Find more at www.rci-holding.com
+                            CIMA DATA ANALYTICS S.A. is a company of RCI Holding. Find more at <a href="https://www.rci-holding.com">www.rci-holding.com</a>
                         </p>
                         <div className="footer-logo-container">
                             <img src={LogoRCI} alt="Logo" className="footer-logo-rci" />

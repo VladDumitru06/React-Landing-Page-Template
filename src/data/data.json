@@ -1,9 +1,11 @@
 {
   "Header": {
     "title": "Vlad",
-    "paragraph": "subtitlu"
+    "paragraph": "Transformare digitală pentru creștere durabilă în energie și utilități"
   },
   "About": {
+    "title": "Despre noi",
+    "subtitle":"De ce sa ne alegi?",
     "paragraph": "bla bla blasmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "Why": [
       "Lorem ipsum dolor",
@@ -18,7 +20,10 @@
       "Lorem ipsum dolor"
     ]
   },
-  "Gallery": [
+ "Gallery": {
+  "title": "Gallery",
+  "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.",
+  "items": [
     {
       "title": "Project Title",
       "largeImage": "img/portfolio/01-large.jpg",
@@ -64,8 +69,12 @@
       "largeImage": "img/portfolio/09-large.jpg",
       "smallImage": "img/portfolio/09-small.jpg"
     }
-  ],
-  "Services": [
+  ]
+},
+"Services": {
+  "title": "Serviciile noastre",
+  "subtitle": "subtitlu",
+  "items": [
     {
       "icon": "fa fa-wordpress",
       "name": "Lorem ipsum dolor",
@@ -96,8 +105,11 @@
       "name": "Consectetur adipiscing",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
     }
-  ],
-  "Testimonials": [
+  ]
+},
+  "Testimonials": {
+  "title": "Clientii nostrii",
+  "items": [
     {
       "img": "img/testimonials/01.jpg",
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
@@ -128,8 +140,12 @@
       "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
       "name": "Johnathan Doe"
     }
-  ],
-  "Team": [
+  ]
+},
+"Team": {
+  "title": "Echipa",
+  "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.",
+  "items": [
     {
       "img": "img/team/01.jpg",
       "name": "John Doe",
@@ -150,7 +166,8 @@
       "name": "Karen Doe",
       "job": "Project Manager"
     }
-  ],
+  ]
+},
   "Contact": {
     "address": "4321 California St, San Francisco, CA 12345 ",
     "phone": "+1 123 456 1234",
@@ -159,7 +176,9 @@
     "twitter": "twitter.com",
     "youtube": "youtube.com"
   },
-  "Features": [
+"Features": {
+  "title": "Features",
+  "items": [
     {
       "icon": "fa fa-comments-o",
       "title": "Lorem ipsum",
@@ -181,4 +200,5 @@
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     }
   ]
+}
 }

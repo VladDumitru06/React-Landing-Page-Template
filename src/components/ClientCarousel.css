@@ -1,3 +1,4 @@
+@import '../App.css';
 /* Client Carousel Styles */
 .client-carousel-container {
     position: relative;
@@ -111,7 +112,7 @@
 }
 
 .carousel-dot.active {
-    background-color: #5ca9fb;
+    background-color:  var(--secondary-color);
 }
 
 .carousel-dot:hover {
