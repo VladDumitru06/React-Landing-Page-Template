@@ -2,7 +2,7 @@
 @import '../../App.css';
 
 .footer {
-    background-color: #0f172a; /* Darker than nav for contrast */
+    background-color: #000000; /* Darker than nav for contrast */
     color: var(--white-color);
     padding-top: 80px;
     position: relative;

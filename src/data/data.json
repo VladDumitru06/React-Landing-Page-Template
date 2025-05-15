@@ -6,22 +6,22 @@
   "About": {
     "title": "Despre noi",
     "subtitle":"De ce sa ne alegi?",
-    "paragraph": "bla bla blasmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "Cima Data Analytics, parte a RCI Holding și componentă esențială a pilonului Digital Innovation & Technology, activează din 2014 ca partener de încredere în furnizarea de soluții IT și consultanță strategică pentru companii din domeniul utilităților și al energiei. Specializați în transformarea digitală a acestora, ne asumăm rolul de integratori de soluții tehnologice complete și consultanți strategici, cu un focus puternic pe administrarea infrastructurilor critice și pe implementarea celor mai avansate tehnologii.\n\nPe lângă colaborarea cu companii din sectorul privat, Cima Data Analytics furnizează soluții și pentru administrația publică și organismele de reglementare în domeniul energiei și utilităților, având o experiență vastă în optimizarea proceselor și în sprijinirea acestora în adoptarea transformării digitale. Ne adresăm în special instituțiilor publice și entităților care gestionează infrastructuri critice, în vederea îmbunătățirii performanței, transparenței și eficienței acestora prin soluții personalizate și inovative.\n\nColaborăm cu lideri din industrie pentru a livra soluții end-to-end, de la concept și design, până la implementarea infrastructurii IT și operaționalizarea acesteia. Având în vedere specificul cerințelor din domeniul energiei și utilităților, digitalizarea devine un factor esențial pentru reducerea Costului Total de Proprietate (TCO), creșterea eficienței energetice și îmbunătățirea profitabilității.\n\nPrin tehnologii avansate de data analytics, soluții smart grid și aplicații IoT, sprijinim organizațiile publice și private să își optimizeze operațiunile, să reducă costurile de mentenanță și să monitorizeze în timp real infrastructurile critice. Aceste inovații permit gestionarea inteligentă a activelor, mentenanță predictivă și minimizarea timpului de nefuncționare, esențiale într-un mediu cu cerințe în continuă schimbare.\n\nEchipa noastră de analiști de date, arhitecți IT și consultanți cu expertiză în industrii critice livrează soluții scalabile, personalizate fiecărui client, printr-o abordare colaborativă și un know-how combinat. La Cima Data Analytics, sprijinim clienții în tranziția către un model de operare inteligent, bazat pe date și tehnologii interconectate, contribuind astfel la revoluționarea lanțului valoric energetic și deschizând noi oportunități de creștere durabilă.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
-    ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
-    ]
+  "Motiv 1",
+  "Motiv 2",
+  "Motiv 3",
+  "Motiv 4"
+],
+"Why2": [
+  "Motiv 1",
+  "Motiv 2",
+  "Motiv 3",
+  "Motiv 4"
+]
   },
  "Gallery": {
-  "title": "Gallery",
+  "title": "Servicii",
   "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.",
   "items": [
     {
@@ -72,7 +72,7 @@
   ]
 },
 "Services": {
-  "title": "Serviciile noastre",
+  "title": "Misiune – Viziune – Valori",
   "subtitle": "subtitlu",
   "items": [
     {
@@ -143,7 +143,7 @@
   ]
 },
 "Team": {
-  "title": "Echipa",
+  "title": "Portofoliu de proiecte",
   "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.",
   "items": [
     {
@@ -177,27 +177,32 @@
     "youtube": "youtube.com"
   },
 "Features": {
-  "title": "Features",
+  "title": "Rezultate care contează",
   "items": [
     {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-history",
+      "title": "10+ ani pe piata de consultanta IT",
+      "text": ""
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-tasks",
+      "title": "100+ proiecte",
+      "text": ""
     },
     {
-      "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-users",
+      "title": "600 K beneficiari",
+      "text": ""
     },
     {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-user-plus",
+      "title": "500+ utilizatori",
+      "text": ""
+    },
+    {
+      "icon": "fa fa-exchange",
+      "title": "30 milioane + tranzactii",
+      "text": ""
     }
   ]
 }

@@ -9,14 +9,14 @@ const Navigation = () => {
 
     // Use useMemo to prevent recreation of the navigation array on each render
     const navigation = useMemo(() => [
-        { name: 'ACASA', href: '#header', section: 'header' },
-        { name: 'EXPERTISE', href: '#features', section: 'features' },
-        { name: 'DESPRE\u00A0NOI', href: '#about', section: 'about' },
-        { name: 'SERVICII', href: '#services', section: 'services' },
-        { name: 'GALERIE', href: '#portfolio', section: 'portfolio' },
-        { name: 'TESTIMONIALE', href: '#testimonials', section: 'testimonials' },
-        { name: 'ECHIPA', href: '#team', section: 'team' },
-        { name: 'CONTACT', href: '#contact', section: 'contact' },
+        { name: 'ACASA', href: '/#header', section: 'header' },
+        { name: 'DESPRE\u00A0NOI', href: '/#about', section: 'about' },
+        { name: 'REZULTATE', href: '/#features', section: 'features' },
+        { name: 'MISIUNE SI VALORI', href: '/#services', section: 'services' },
+        { name: 'SERVICII', href: '/#portfolio', section: 'portfolio' },
+        { name: 'CLIENTI', href: '/#testimonials', section: 'testimonials' },
+        { name: 'PORTOFOLIU', href: '/#team', section: 'team' },
+        { name: 'CONTACT', href: '/#contact', section: 'contact' },
     ], []); // Empty dependency array means this only runs once
 
     useEffect(() => {

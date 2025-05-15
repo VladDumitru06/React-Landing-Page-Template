@@ -1,40 +1,71 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import React from "react";
+import emailjs from 'emailjs-com';
 
 const initialState = {
   name: "",
   email: "",
   message: "",
 };
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
+  
   const clearState = () => setState({ ...initialState });
   
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  // Method 1: Direct mailto link for backup
+  const handleDirectEmailOpen = () => {
+    const subject = encodeURIComponent("New Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    );
+    window.location.href = `mailto:vlad.dumitru@cimadata.ro?subject=${subject}&body=${body}`;
   };
+  
+  // Method 2: Form submission with EmailJS
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    // Prepare the template parameters
+    const templateParams = {
+      from_name: name,
+      reply_to: email,
+      to_name: "Vlad Dumitru",
+      message: message,
+      to_email: "vlad.dumitru@cimadata.ro" // This is added as a parameter to use in the EmailJS template
+    };
+    
+    try {
+      // Replace with your actual EmailJS service ID, template ID, and user ID
+      // You'll need to sign up at emailjs.com and create these
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID', // replace with your service ID
+        'YOUR_TEMPLATE_ID', // replace with your template ID
+        templateParams,
+        'YOUR_USER_ID' // replace with your user ID
+      );
+      
+      console.log("Email sent successfully:", result.text);
+      setSubmitSuccess(true);
+      clearState();
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSubmitError(error.text || "Failed to send email. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
   return (
     <div>
       <div id="contact">
@@ -48,7 +79,7 @@ export const Contact = (props) => {
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form name="sentMessage" onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -60,6 +91,7 @@ export const Contact = (props) => {
                         placeholder="Name"
                         required
                         onChange={handleChange}
+                        value={name}
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -74,6 +106,7 @@ export const Contact = (props) => {
                         placeholder="Email"
                         required
                         onChange={handleChange}
+                        value={email}
                       />
                       <p className="help-block text-danger"></p>
                     </div>
@@ -88,12 +121,39 @@ export const Contact = (props) => {
                     placeholder="Message"
                     required
                     onChange={handleChange}
+                    value={message}
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </div>
-                <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
-                  Send Message
+                
+                <div id="success">
+                  {submitSuccess && (
+                    <div className="alert alert-success">
+                      Your message has been sent successfully!
+                    </div>
+                  )}
+                  {submitError && (
+                    <div className="alert alert-danger">
+                      Sorry, there was an error sending your message: {submitError}
+                    </div>
+                  )}
+                </div>
+                <button 
+                  type="submit" 
+                  className="btn btn-custom btn-lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+                
+                {/* Alternative direct email button */}
+                <button 
+                  type="button" 
+                  className="btn btn-outline-secondary btn-lg ml-2"
+                  onClick={handleDirectEmailOpen}
+                  style={{ marginLeft: '10px' }}
+                >
+                  Open Email Client
                 </button>
               </form>
             </div>
@@ -121,7 +181,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                vlad.dumitru@cimadata.ro
               </p>
             </div>
           </div>
@@ -153,10 +213,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
+            &copy; 2025 React Landing Page
           </p>
         </div>
       </div>

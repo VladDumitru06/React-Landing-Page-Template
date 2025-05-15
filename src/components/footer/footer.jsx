@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Linkedin, Code, Users } from 'lucide-react';
 import './footer.css';
 import LogoRCI from '../../assets/img/rci_white_logo.svg';
 import Logo from '../../assets/img/Logo alb-alb.png';
-
+import { FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -22,8 +22,8 @@ const Footer = () => {
                             <img src={LogoRCI} alt="Logo" className="footer-logo-rci" />
                         </div>
                         <div className="social-icons">
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <Linkedin size={20} />
+                            <a href="https://www.linkedin.com/company/rci-holding/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <FaLinkedinIn  size={20} />
                             </a>
                         </div>
                     </div>
@@ -80,8 +80,8 @@ const Footer = () => {
                         </ul>
 
                         <div className="social-icons">
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <Linkedin size={20} />
+                            <a href="https://www.linkedin.com/company/cimadatarci/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <FaLinkedinIn  size={20} />
                             </a>
                         </div>
                     </div>
@@ -94,13 +94,7 @@ const Footer = () => {
                     <span>All Rights Reserved</span>
                 </div>
                 <div className="footer-bottom-links">
-                    <a href="#terms">Termeni</a>
-                    <span className="separator">•</span>
-                    <a href="#privacy">Confidențialitate</a>
-                    <span className="separator">•</span>
-                    <a href="#cookies">Cookies</a>
-                    <span className="separator">•</span>
-                    <a href="#security">Securitate</a>
+                    <a href="/policy">Cookies</a>
                 </div>
             </div>
         </footer>
