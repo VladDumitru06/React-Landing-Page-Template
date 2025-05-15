@@ -35,9 +35,9 @@ const ContactSection = () => {
       from_name: formData.name,
       reply_to: formData.email,
       subject: formData.subject,
-      to_name: "Vlad Dumitru",
+      to_name: "Website Cima",
       message: formData.message,
-      to_email: "vlad.dumitru@cimadata.ro"
+      to_email: "office@cimadata.ro"
     };
     
     // Toast promise with Romanian messages

@@ -20,57 +20,70 @@
   "Motiv 4"
 ]
   },
- "Gallery": {
-  "title": "Servicii",
-  "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.",
-  "items": [
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    }
-  ]
-},
+  "Gallery": {
+    "title": "Inovație și tehnologie digitală",
+    "subtitle": "De la proiectare și integrare tehnologică, până la transformare digitală și optimizarea proceselor, susținem dezvoltarea sustenabilă:",
+    "items": [
+      {
+        "icon": "fa fa-line-chart",
+        "name": "Consultanță strategică și transformare digitală",
+        "services": [
+          "Strategie pentru piața de energie",
+          "Strategie de transformare IT și Digital Office",
+          "Strategii Smart City",
+          "Planificare strategică pe termen lung",
+          "Business process reengineering & automatizare",
+          "Elaborarea de business case-uri complete",
+          "Scenarii reale de tarifare",
+          "Strategie telecom pentru operatorii de distribuție"
+        ]
+      },
+      {
+        "icon": "fa fa-cogs",
+        "name": "Servicii de tehnologie și integrare",
+        "services": [
+          "Consultanță tehnologică și integrare de soluții",
+          "Arhitectura și implementare Enterprise Service Bus (ESB)",
+          "Sisteme Smart Metering",
+          "Soluții IoT și colectare de date OT",
+          "Integrare SCADA & ADMS",
+          "Sisteme WfM și servicii de teren",
+          "Interacțiune digitală cu clientul (portaluri, CRM, aplicații mobile)",
+          "Platforme de achiziții și B2B"
+        ]
+      },
+      {
+        "icon": "fa fa-database",
+        "name": "Data Science și inteligență artificială",
+        "services": [
+          "Soluții AI de prognoză pentru mai multe industrii",
+          "Prognoze de sarcină, preț, pierderi tehnice",
+          "Mentenanță predictivă",
+          "Implementare și gestionare Data Lakes",
+          "Automatizare procese cu RPA"
+        ]
+      },
+      {
+        "icon": "fa fa-lightbulb-o",
+        "name": "Inovație și tehnologii emergente",
+        "services": [
+          "Soluții bazate pe AI, Machine Learning și Blockchain",
+          "Strategie de inovare digitală",
+          "Centre de competență pentru tehnologii avansate"
+        ]
+      },
+      {
+        "icon": "fa fa-shield",
+        "name": "Securitate cibernetică și conformitate",
+        "services": [
+          "Consultanță în securitate cibernetică",
+          "Sisteme de avertizare timpurie",
+          "Conformitate și reprezentare în fața autorităților de reglementare",
+          "Strategie de investiții pentru ataceri reglementate"
+        ]
+      }
+    ]
+  },
 "Services": {
   "title": "Misiune – Viziune – Valori",
   "subtitle": "subtitlu",

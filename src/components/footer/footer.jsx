@@ -33,12 +33,11 @@ const Footer = () => {
                             <span>Servicii</span>
                         </h3>
                         <ul className="footer-links">
-                            <li><a href="#services">Dezvoltare Software</a></li>
-                            <li><a href="#services">Aplicații Web</a></li>
-                            <li><a href="#services">Aplicații Mobile</a></li>
-                            <li><a href="#services">Cloud & DevOps</a></li>
-                            <li><a href="#services">Consultanță IT</a></li>
-                            <li><a href="#services">Inteligență Artificială</a></li>
+                            <li><a href="#services">Consultanță strategică și transformare digitală</a></li>
+                            <li><a href="#services">Servicii de tehnologie și integrare</a></li>
+                            <li><a href="#services">Data Science și inteligență artificială</a></li>
+                            <li><a href="#services">Inovație și tehnologii emergente</a></li>
+                            <li><a href="#services">Securitate cibernetică și conformitate</a></li>
                         </ul>
                     </div>
 
@@ -51,10 +50,11 @@ const Footer = () => {
                         </h3>
                         <ul className="footer-links">
                             <li><a href="#about">Despre Noi</a></li>
-                            <li><a href="#team">Echipa</a></li>
-                            <li><a href="#careers">Cariere</a></li>
-                            <li><a href="#partners">Parteneri</a></li>
-                            <li><a href="#press">Presă</a></li>
+                            <li><a href="#team">Rezultate</a></li>
+                            <li><a href="#careers">Valori</a></li>
+                            <li><a href="#partners">Servicii</a></li>
+                            <li><a href="#press">Clienti</a></li>
+                            <li><a href="#press">Portofoliu</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
@@ -67,15 +67,15 @@ const Footer = () => {
                         <ul className="contact-info">
                             <li>
                                 <Phone size={18} className="contact-icon" />
-                                <a href="tel:+40712345678">+40 712 345 678</a>
+                                <a href="tel:+40712345678">0741 182 778</a>
                             </li>
                             <li>
                                 <Mail size={18} className="contact-icon" />
-                                <a href="mailto:contact@techsolutions.ro">contact@techsolutions.ro</a>
+                                <a href="mailto:contact@techsolutions.ro">office@cimadata.ro</a>
                             </li>
                             <li>
                                 <MapPin size={18} className="contact-icon" />
-                                <span>Tech Hub, Str. Inovației 42, București</span>
+                                <span>Bulevardul Dacia 20, București 010412</span>
                             </li>
                         </ul>
 
