@@ -76,34 +76,19 @@
   "subtitle": "subtitlu",
   "items": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-flag",
+      "name": "Misiune",
+      "text": "Împuternicim companiile din sectorul utilități și energie cu soluții de ultimă oră de transformare digitală.\n\nOferim expertiză de top, permițând companiilor să valorifice informații bazate pe date, să optimizeze operațiunile și să atingă eficiența maximă.\n\nAngajamentul nostru este de a ghida clienții către apogeul capacităților lor tehnologice, asigurând stabilitatea, creșterea și inovația pe termen lung."
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-binoculars",
+      "name": "Viziune",
+      "text": "Aspirăm să fim lider în analiza datelor și transformarea digitală, conducând companiile industriale și de utilități către un viitor de eficiență, productivitate și maturitate digitală fără egal.\n\nPrin evoluția continuă și prin valorificarea celor mai recente inovații, ne propunem să redefinim standardele din industrie, ajutându-ne clienții să atingă noi culmi în excelență operațională și succes în afaceri."
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-diamond",
+      "name": "Valori",
+      "text": "**Excelență și inovație** – Ne străduim să obținem cel mai înalt nivel de performanță, asigurându-ne că soluțiile noastre deschid drumul în transformarea digitală.\n\n**Leadership și expertiză** – abilitățile superioare ale echipei noastre și cunoștințele strategice ne fac partenerul de încredere pentru industriile care caută soluții digitale end-to-end.\n\n**Reziliență și stabilitate** – Ca un summit care durează testul timpului, construim infrastructuri digitale de lungă durată și de încredere pentru clienții noștri.\n\n**Abordare centrată pe client** – Ne angajăm să ne ghidăm și să sprijinim clienții noștri în fiecare pas al călătoriei lor digitale, asigurând un succes măsurabil.\n\n**Integritate și colaborare** – Credem în transparență, încredere și parteneriate puternice, promovând o cultură a creșterii reciproce și a inovației."
     }
   ]
 },

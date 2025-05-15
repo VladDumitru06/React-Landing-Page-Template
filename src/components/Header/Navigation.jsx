@@ -12,7 +12,7 @@ const Navigation = () => {
         { name: 'ACASA', href: '/#header', section: 'header' },
         { name: 'DESPRE\u00A0NOI', href: '/#about', section: 'about' },
         { name: 'REZULTATE', href: '/#features', section: 'features' },
-        { name: 'MISIUNE SI VALORI', href: '/#services', section: 'services' },
+        { name: 'VALORI', href: '/#services', section: 'services' },
         { name: 'SERVICII', href: '/#portfolio', section: 'portfolio' },
         { name: 'CLIENTI', href: '/#testimonials', section: 'testimonials' },
         { name: 'PORTOFOLIU', href: '/#team', section: 'team' },

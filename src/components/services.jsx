@@ -1,5 +1,24 @@
 import React from "react";
 export const Services = (props) => {
+  const renderFormattedText = (text) => {
+    // Split by line breaks to maintain pre-wrap formatting
+    const lines = text.split('\n\n');
+    
+    return lines.map((line, index) => {
+      // Replace **text** with styled spans
+      const formattedLine = line.replace(
+        /\*\*(.*?)\*\*/g, 
+        '<span style="font-weight: bold">$1</span>'
+      );
+      
+      return (
+        <React.Fragment key={index}>
+          <span dangerouslySetInnerHTML={{ __html: formattedLine }} />
+          {index < lines.length - 1 && <><br /><br /></>}
+        </React.Fragment>
+      );
+    });
+  };
   return (
     <div id="services" className="text-center">
       <div className="container">
@@ -17,7 +36,7 @@ export const Services = (props) => {
                   <i className={d.icon}></i>
                   <div className="service-desc">
                     <h3>{d.name}</h3>
-                    <p>{d.text}</p>
+                    <p style={{ whiteSpace: 'pre-wrap' }}>{renderFormattedText(d.text)}</p>
                   </div>
                 </div>
               ))

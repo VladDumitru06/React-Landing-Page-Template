@@ -119,11 +119,6 @@ const ContactSection = () => {
 
             {/* Contact Form */}
             <div className="contact-form">
-              {submitError && (
-                <div className="error-message">
-                  Ne pare rău, a apărut o eroare la trimiterea mesajului: {submitError}
-                </div>
-              )}
               
               <form onSubmit={handleSubmit}>
                 <div className="form-row">
