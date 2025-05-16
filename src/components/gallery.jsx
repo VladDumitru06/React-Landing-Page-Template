@@ -6,19 +6,19 @@ export const Gallery = (props) => {
     if (!text) return null;
     
     // Check if text should have orange highlighting
-    if (text === "Implementare și gestionare Data Lakes") {
-      return (
-        <>
-          Implementare și gestionare <span style={{ color: "#E56C3E" }}>Data Lakes</span>
-        </>
-      );
-    } else if (text === "Sisteme de avertizare timpurie") {
-      return (
-        <>
-          <span style={{ color: "#E56C3E" }}>Sisteme de avertizare timpurie</span>
-        </>
-      );
-    }
+    // if (text === "Implementare și gestionare Data Lakes") {
+    //   return (
+    //     <>
+    //       Implementare și gestionare <span style={{ color: "#E56C3E" }}>Data Lakes</span>
+    //     </>
+    //   );
+    // } else if (text === "Sisteme de avertizare timpurie") {
+    //   return (
+    //     <>
+    //       <span style={{ color: "#E56C3E" }}>Sisteme de avertizare timpurie</span>
+    //     </>
+    //   );
+    // }
     
     return text;
   };
@@ -82,24 +82,41 @@ export const Gallery = (props) => {
                     {d.name}
                   </h3>
                   
-                  {/* Service Items */}
+                  {/* Service Items - Container */}
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
-                    width: '100%'
+                    width: '100%',
+                    alignItems: 'flex-start',
+                    paddingLeft: '20%', // This creates space for alignment
                   }}>
                     {d.services && d.services.map((service, j) => (
                       <div 
                         key={`service-${i}-${j}`}
                         style={{
-                          textAlign: 'center',
+                          textAlign: 'left',
                           margin: '6px 0',
                           fontSize: '14px',
-                          color: '#666'
+                          color: '#666',
+                          display: 'flex',
+                          alignItems: 'center',
+                          position: 'relative',
+                          width: '100%'
                         }}
                       >
-                        {renderFormattedText(service)}
+                        {/* Circle Bullet */}
+                        <div style={{
+                          width: '5px',
+                          height: '5px',
+                          borderRadius: '50%',
+                          backgroundColor: '#666',
+                          marginRight: '8px',
+                          flexShrink: 0
+                        }}></div>
+                        {/* Text */}
+                        <div>
+                          {renderFormattedText(service)}
+                        </div>
                       </div>
                     ))}
                   </div>

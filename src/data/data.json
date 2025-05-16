@@ -107,6 +107,8 @@
 },
   "Testimonials": {
   "title": "Clientii nostrii",
+  "subtitle": "Construim parteneriate durabile cu organizații care îmbrățișează schimbarea, accelerând împreună transformarea digitală prin soluții inovatoare și scalabile",
+  "description": "Organizații care ne-au ales pentru a le ghida transformarea",
   "items": [
     {
       "img": "img/testimonials/01.jpg",
