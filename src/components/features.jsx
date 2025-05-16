@@ -170,7 +170,7 @@ export const Features = (props) => {
                     height: 200,
                     float: 'left',
                     padding: '0 15px',
-                    marginBottom: '20px'
+                    marginBottom: '25px'
                   }}
                 >
                   <i className={d.icon}></i>

@@ -48,7 +48,7 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.nav-logo {
+.header-logo {
     height: 40px;
     /* Adjust based on your needs */
     width: auto;
@@ -75,17 +75,23 @@
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
+
 .nav-link:focus {
-    color: var(--white-color) !important; /* Default color */
-    text-decoration: none !important; /* Remove underline */
-    outline: none; /* Remove outline */
-  }
-  
-  /* When active */
-  .nav-link.active:focus {
-    color: var(--secondary-color) !important; /* Your active color */
+    color: var(--white-color) !important;
+    /* Default color */
     text-decoration: none !important;
-  }
+    /* Remove underline */
+    outline: none;
+    /* Remove outline */
+}
+
+/* When active */
+.nav-link.active:focus {
+    color: var(--secondary-color) !important;
+    /* Your active color */
+    text-decoration: none !important;
+}
+
 .nav-link:hover::after,
 .nav-link.active::after {
     width: calc(100% - 20px);
@@ -129,6 +135,24 @@
     color: var(--secondary-color);
 }
 
+.mobile-logo-container {
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
+    /* Space between logo/button and border */
+    /* Vertical separator */
+}
+
+.nav-logo-mobile {
+    height: 30px;
+    border-right: 1px solid var(--white-color);
+    /* Adjust as needed for mobile */
+    width: auto;
+}
+
+
 .mobile-menu-button {
     display: none;
 }
@@ -154,8 +178,18 @@
         width: 90%;
     }
 
+    .header-logo {
+        display: none;
+        /* Hide the header logo on mobile */
+    }
+
     .nav {
         padding: 12px 20px;
+    }
+
+    .mobile-logo-container {
+        display: flex;
+        /* Show the mobile logo container */
     }
 
     .mobile-menu-button {
@@ -173,6 +207,10 @@
 
     .nav-content {
         justify-content: space-between;
+        flex-direction: row;
+        /* Reset flex direction for mobile */
+        width: 100%;
+        /* Allow nav-content to take full width */
     }
 
     .desktop-menu {
@@ -200,7 +238,7 @@
 
     .mobile-menu.open-menu {
         max-height: 400px;
-        width:150px;
+        width: 150px;
         opacity: 1;
         padding: 10px 20px;
     }
@@ -251,10 +289,14 @@
         opacity: 1;
     }
 
-    .nav-logo {
-        height: 30px;
-        /* Slightly smaller for mobile */
-    }
+    /* Hide the old nav-logo class definition as header-logo replaces it */
+    /*
+    .nav-logo {
+        height: 40px;
+        width: auto;
+        margin-right: 20px;
+    }
+    */
 
     .contact-info-header {
         gap: 10px;
@@ -269,4 +311,8 @@
         top: 25px;
         /* Adjust for mobile scrolled state */
     }
+}
+
+body {
+    scroll-behavior: smooth;
 }

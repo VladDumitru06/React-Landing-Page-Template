@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import './Navigation.css';
 import Logo from '../../assets/img/Logo.png';
+import Logo2 from '../../assets/img/Logo2.png';
+
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -9,8 +11,8 @@ const Navigation = () => {
 
     // Use useMemo to prevent recreation of the navigation array on each render
     const navigation = useMemo(() => [
-        { name: 'ACASA', href: '/#header', section: 'header' },
-        { name: 'DESPRE\u00A0NOI', href: '/#about', section: 'about' },
+        { name: 'ACASA', href: '#header', section: 'header' },
+        { name: 'DESPRE\u00A0NOI', href: '#about', section: 'about' },
         { name: 'REZULTATE', href: '/#features', section: 'features' },
         { name: 'VALORI', href: '/#services', section: 'services' },
         { name: 'SERVICII', href: '/#portfolio', section: 'portfolio' },
@@ -46,10 +48,28 @@ const Navigation = () => {
 
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-            <img alt={'company logo'} src={Logo} width={'100px'} />
-            {/*<img src={Logo} alt="Logo" className="nav-logo" />*/}
+            {/* Original Logo - Hidden on mobile via CSS */}
+            <img alt={'company logo'} src={Logo} width={'100px'} className="header-logo" />
             <nav className="nav">
                 <div className="nav-content">
+                    {/* Mobile Logo and Burger Container - Shown on mobile via CSS */}
+                    <div className="mobile-logo-container">
+                        <img alt={'company logo mobile'} src={Logo2} className="nav-logo-mobile" />
+                        <button
+                            className="mobile-menu-button"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-expanded={isMenuOpen}
+                            aria-label="Toggle navigation menu"
+                        >
+                            {isMenuOpen ? (
+                                <X className="w-6 h-6 icon-transition" />
+                            ) : (
+                                <Menu className="w-6 h-6 icon-transition" />
+                            )}
+                        </button>
+                    </div>
+
+                    {/* Desktop Menu - Hidden on mobile via CSS */}
                     <div className="desktop-menu">
                         {navigation.map((item) => (
                             <a
@@ -61,21 +81,9 @@ const Navigation = () => {
                             </a>
                         ))}
                     </div>
-
-                    <button
-                        className="mobile-menu-button"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-expanded={isMenuOpen}
-                        aria-label="Toggle navigation menu"
-                    >
-                        {isMenuOpen ? (
-                            <X className="w-6 h-6 icon-transition" />
-                        ) : (
-                            <Menu className="w-6 h-6 icon-transition" />
-                        )}
-                    </button>
                 </div>
 
+                {/* Mobile Menu Dropdown */}
                 <div className={`mobile-menu ${isMenuOpen ? 'open-menu' : ''}`}>
                     {navigation.map((item, index) => (
                         <a

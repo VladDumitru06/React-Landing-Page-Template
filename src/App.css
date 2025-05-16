@@ -8,7 +8,7 @@
   --nav-color: rgb(128 128 128 / 46%);
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   #features {
     padding: 20px;
     width: 111%;
@@ -25,4 +25,4 @@
   #portfolio {
     width: 110%;
   }
-}
+} */

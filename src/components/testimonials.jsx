@@ -132,7 +132,9 @@ export const Testimonials = (props) => {
     <div id="testimonials">
       <div className="container">
         <div className="section-title text-center">
-        <h2>{props.data ? props.data.title : "Our Trusted Clientss"}</h2>
+          <h2>{props.data ? props.data.title : "Clientii nostrii"}</h2>
+          <p>{props.data ? props.data.subtitle : ""}</p>
+          <p><strong>{props.data ? props.data.description : ""}</strong></p>
         </div>
 
         <div className="client-carousel-container">
