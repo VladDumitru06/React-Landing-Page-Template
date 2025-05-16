@@ -1,30 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export const Features = (props) => {
-  const [columnWidth, setColumnWidth] = useState('50%');
   const [animatedValues, setAnimatedValues] = useState({});
   const sectionRef = useRef(null);
-  
-  // Handle responsive layout
-  useEffect(() => {
-    function updateColumnWidth() {
-      if (window.innerWidth >= 992) {
-        setColumnWidth('20%'); // 5 per row on desktop
-      } else if (window.innerWidth >= 768) {
-        setColumnWidth('33.333%'); // 3 per row on tablets
-      } else {
-        setColumnWidth('50%'); // 2 per row on phones
-      }
-    }
-    
-    updateColumnWidth();
-    window.addEventListener('resize', updateColumnWidth);
-    return () => window.removeEventListener('resize', updateColumnWidth);
-  }, []);
+  const numberRefs = useRef([]);
   
   // Set up intersection observer and animation
   useEffect(() => {
     if (!props.data || !sectionRef.current) return;
+    
+    // Initialize refs array
+    numberRefs.current = Array(props.data.items.length).fill().map(() => React.createRef());
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,7 +20,7 @@ export const Features = (props) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
     
     observer.observe(sectionRef.current);
@@ -44,6 +30,15 @@ export const Features = (props) => {
   
   // Parse title to extract number, suffix, and remaining text
   const parseTitle = (title) => {
+    // Special case for "30 milioane +" tranzactii - convert to "30M +"
+    if (title.includes('30 milioane +')) {
+      return {
+        number: 30,
+        suffix: 'M +',
+        text: 'tranzactii'
+      };
+    }
+    
     // Handle "milioane" case
     if (title.includes('milioane')) {
       const match = title.match(/^(\d+)\s*(milioane\s*\+?)\s*(.*)$/);
@@ -56,13 +51,22 @@ export const Features = (props) => {
       }
     }
     
-    // Handle regular cases (with + or K)
-    const match = title.match(/^(\d+)\s*(\+|K)?\s*(.*)$/);
+    // Special case for "600K+" beneficiari
+    if (title.includes('600K')) {
+      return {
+        number: 600,
+        suffix: 'K+',
+        text: 'beneficiari'
+      };
+    }
+    
+    // Handle regular cases (with +, M, or K)
+    const match = title.match(/^(\d+)\s*(K\+?|M\+?|\+)?(?:\s+(.*))?$/);
     if (match) {
       return {
         number: parseInt(match[1]),
         suffix: match[2] || '',
-        text: match[3]
+        text: match[3] || ''
       };
     }
     
@@ -70,7 +74,7 @@ export const Features = (props) => {
     return { number: 0, suffix: '', text: title };
   };
   
-  // Simple animation function
+  // Enhanced animation function with better easing and bounce effect
   const animateNumbers = () => {
     if (!props.data) return;
     
@@ -85,26 +89,43 @@ export const Features = (props) => {
       
       // Only animate if we have a number to count to
       if (number > 0) {
-        const duration = 3000; // 2 seconds
+        const duration = 2500; // 2.5 seconds for animation
         const startTime = performance.now();
+        let previousValue = 0;
         
         const animate = (currentTime) => {
           const elapsedTime = currentTime - startTime;
           const progress = Math.min(elapsedTime / duration, 1);
           
-          // Easing function for smoother animation
-          const easedProgress = progress < 0.5
-            ? 4 * progress * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+          // Improved easing function for more dynamic animation
+          // This creates a "spring" effect that overshoots slightly and settles
+          const easedProgress = progress === 1 
+            ? 1 
+            : (progress < 0.6) 
+              ? 4 * progress * progress * progress
+              : 1 + Math.pow(2 * progress - 2, 3) / 2;
           
-          // Calculate current value
+          // Calculate current value with potential overshoot
           let currentValue = Math.round(easedProgress * number);
+          
+          // Ensure we never exceed target value by more than 10%
+          if (currentValue > number * 1.1) {
+            currentValue = Math.round(number * 1.1);
+          }
           
           // Update state with current value
           setAnimatedValues(prev => ({
             ...prev,
             [index]: { value: currentValue, suffix, text }
           }));
+          
+          // Add bounce animation when the value changes significantly
+          if (numberRefs.current[index]?.current && Math.abs(currentValue - previousValue) > number * 0.05) {
+            numberRefs.current[index].current.classList.remove('animate');
+            void numberRefs.current[index].current.offsetWidth; // Force reflow
+            numberRefs.current[index].current.classList.add('animate');
+            previousValue = currentValue;
+          }
           
           // Continue animation until done
           if (progress < 1) {
@@ -132,55 +153,43 @@ export const Features = (props) => {
     const { value, suffix, text } = animatedValues[index];
     
     // Add proper spacing
-    let formattedTitle = `${value}`;
+    let formattedValue = `${value}`;
     
-    // Add space before K or after a number if there's a suffix
+    // Add suffix based on its type
     if (suffix) {
-      if (suffix === 'K') {
-        formattedTitle += ' K';
-      } else if (suffix === '+') {
-        formattedTitle += '+';
-      } else {
-        // For "milioane" and other cases
-        formattedTitle += ' ' + suffix;
-      }
+      formattedValue += suffix; // Just add the suffix as is (including any spaces)
     }
     
-    // Add the rest of the text with proper spacing
-    if (text) {
-      formattedTitle += ' ' + text;
-    }
-    
-    return formattedTitle;
+    return formattedValue;
   };
 
   return (
-    <div id="features" className="text-center" ref={sectionRef}>
+    <div id="features" className="features-section text-center" ref={sectionRef}>
       <div className="container">
-        <div className="col-md-10 col-md-offset-1 section-title">
-          <h2>{props.data ? props.data.title : "Features"}</h2>
+        <div className="section-title">
+          <h2>{props.data ? props.data.title : "Rezultate care contează"}</h2>
+
         </div>
-        <div className="row" style={{ display: 'block' }}>
+        
+        <div className="stats-row">
           {props.data && props.data.items
             ? props.data.items.map((d, i) => (
-                <div 
-                  key={`${d.title}-${i}`} 
-                  style={{
-                    width: columnWidth,
-                    height: 200,
-                    float: 'left',
-                    padding: '0 15px',
-                    marginBottom: '25px'
-                  }}
-                >
-                  <i className={d.icon}></i>
-                  <h3>{getFormattedTitle(i)}</h3>
-                  <p>{d.text}</p>
+                <div key={`${d.title}-${i}`} className="stat-item-minimal">
+                  <div className="stat-number-wrapper">
+                    <span 
+                      className="stat-number-minimal" 
+                      ref={el => numberRefs.current[i] = el}
+                    >
+                      {getFormattedTitle(i)}
+                    </span>
+                  </div>
+                  <div className="stat-text-minimal">
+                    {animatedValues[i]?.text}
+                  </div>
                 </div>
               ))
             : "Loading..."}
         </div>
-        <div style={{ clear: 'both' }}></div>
       </div>
     </div>
   );
